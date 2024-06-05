@@ -29,9 +29,12 @@ function criarElementoTarefa(tarefa) {
 
     botao.onclick = () => {
         const novaDescricao = prompt("Qual é o novo nome da tarefa?");
-        paragrafo.textContent = novaDescricao;
-        tarefa.descricao = novaDescricao;
-        atualizarTarefas();
+        console.log('Nova descrição da tarefa: ', novaDescricao);
+        if (novaDescricao) {
+            paragrafo.textContent = novaDescricao;
+            tarefa.descricao = novaDescricao;
+            atualizarTarefas();
+        }
     }
 
     const imagemBotao = document.createElement('img');
@@ -66,3 +69,4 @@ tarefas.forEach(tarefa => {
     const elementoTarefa = criarElementoTarefa(tarefa);
     ulTarefas.append(elementoTarefa);
 });
+
