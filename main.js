@@ -23,13 +23,13 @@ let intervaloId = null;
 const contagemRegressiva = function() {
     if (temporDecorridoEmSegundos <= 0) {
         audioTempoFinalizado.play();
-        alert('Tempo finalizado');
         const focoAtivo = html.getAttribute('data-contexto') == 'foco';
         if (focoAtivo) {
             const evento = new CustomEvent('FocoFinalizado');
             document.dispatchEvent(evento);
-        }
-        zerar();
+            }
+            alert('Tempo finalizado');
+            zerar();
         return;
     }
     temporDecorridoEmSegundos -= 1;
